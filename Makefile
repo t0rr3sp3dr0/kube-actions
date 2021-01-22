@@ -21,5 +21,5 @@ continuous-upgrade:
 		git checkout -b "feat/actions-runner-v$${LATEST}"
 		git push -u "$$(git remote show)" "$$(git branch --show-current)"
 		gh pr create -t "Actions Runner v$${LATEST}" -b "https://github.com/actions/runner/releases/tag/v$${LATEST}"
-	endif
+	fi
 .PHONY: continuous-upgrade
