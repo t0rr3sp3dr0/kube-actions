@@ -6,7 +6,7 @@ dind/% operator/% runner/%:
 
 .ONESHELL:
 continuous-upgrade:
-	export LATEST="$(curl -Lf https://api.github.com/repos/actions/runner/releases/latest | jq -r '.tag_name | ltrimstr("v")')"
+	export LATEST="$$(curl -Lf https://api.github.com/repos/actions/runner/releases/latest | jq -r '.tag_name | ltrimstr("v")')"
 	if sed -En "/^RUNNER_VERSION \?= $${LATEST}$$/!{q1}" ./runner/Makefile
 	then
 		echo 'Everything up-to-date'
